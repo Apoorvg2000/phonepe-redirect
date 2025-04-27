@@ -2,11 +2,20 @@
 <html>
   <head>
     <title>Redirecting...</title>
-    <script type="text/javascript">
-      window.location.href = "myapp://payment-success";
-    </script>
   </head>
   <body>
-    <p>Redirecting to the app...</p>
+    <p>If you are not redirected automatically, <button onclick="redirectToApp()">Click here to open the app</button>.</p>
+
+    <script type="text/javascript">
+      function redirectToApp() {
+        window.location.href = "myapp://payment-success";
+      }
+
+      // Try automatic redirect after slight delay
+      setTimeout(function() {
+        redirectToApp();
+      }, 5000);
+    </script>
   </body>
 </html>
+
